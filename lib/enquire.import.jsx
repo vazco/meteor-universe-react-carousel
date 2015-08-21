@@ -3,7 +3,7 @@
  * Copyright (c) 2014 Nick Williams - http://wicky.nillia.ms/enquire.js
  * License: MIT (http://www.opensource.org/licenses/mit-license.php)
  */
-var matchMedia = window.matchMedia;
+var matchMedia = window && window.matchMedia;
 
 /*jshint unused:false */
 /**
