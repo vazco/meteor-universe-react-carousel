@@ -2,15 +2,15 @@ Package.describe({
     name: 'universe:carousel',
     version: '1.0.0',
     // Brief, one-line summary of the package.
-    summary: 'carousel',
-    git: '',
+    summary: 'Carousel component built with React',
+    git: 'https://github.com/vazco/meteor-universe-react-carousel.git',
     documentation: 'README.md'
 });
 
 Package.onUse(function (api) {
     api.versionsFrom('1.1.0.3');
     api.use([
-        'universe:modules'
+        'universe:modules@0.4.1'
     ]);
 
     api.addFiles([
