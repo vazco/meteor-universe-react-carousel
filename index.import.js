@@ -1,1 +1,2 @@
-export * from './components/slider';
+import Slider from './components/slider';
+export default Slider;

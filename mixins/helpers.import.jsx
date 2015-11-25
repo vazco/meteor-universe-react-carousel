@@ -5,9 +5,9 @@ import assign from '../lib/object-assign';
 var helpers = {
     initialize: function (props) {
         var slideCount = React.Children.count(props.children);
-        var listWidth = this.refs.list.getDOMNode().getBoundingClientRect().width;
-        var trackWidth = this.refs.track.getDOMNode().getBoundingClientRect().width;
-        var slideWidth = this.getDOMNode().getBoundingClientRect().width/props.slidesToShow;
+        var listWidth = ReactDOM.findDOMNode(this.refs.list).getBoundingClientRect().width;
+        var trackWidth = ReactDOM.findDOMNode(this.refs.track).getBoundingClientRect().width;
+        var slideWidth = ReactDOM.findDOMNode(this).getBoundingClientRect().width/props.slidesToShow;
 
         var currentSlide = props.rtl ? slideCount - 1 - props.initialSlide : props.initialSlide;
 
@@ -36,9 +36,9 @@ var helpers = {
         // This method has mostly same code as initialize method.
         // Refactor it
         var slideCount = React.Children.count(props.children);
-        var listWidth = this.refs.list.getDOMNode().getBoundingClientRect().width;
-        var trackWidth = this.refs.track.getDOMNode().getBoundingClientRect().width;
-        var slideWidth = this.getDOMNode().getBoundingClientRect().width/props.slidesToShow;
+        var listWidth = ReactDOM.findDOMNode(this.refs.list).getBoundingClientRect().width;
+        var trackWidth = ReactDOM.findDOMNode(this.refs.track).getBoundingClientRect().width;
+        var slideWidth = ReactDOM.findDOMNode(this).getBoundingClientRect().width/props.slidesToShow;
 
         this.setState({
             slideCount: slideCount,
@@ -61,7 +61,7 @@ var helpers = {
         if (this.props.adaptiveHeight) {
             var selector = '[data-index="' + this.state.currentSlide +'"]';
             if (this.refs.list) {
-                var slickList = this.refs.list.getDOMNode();
+                var slickList = ReactDOM.findDOMNode(this.refs.list);
                 slickList.style.height = slickList.querySelector(selector).offsetHeight + 'px';
             }
         }
@@ -106,14 +106,14 @@ var helpers = {
                 if (this.props.afterChange) {
                     this.props.afterChange(currentSlide);
                 }
-                ReactTransitionEvents.removeEndEventListener(this.refs.track.getDOMNode().children[currentSlide], callback);
+                ReactTransitionEvents.removeEndEventListener(ReactDOM.findDOMNode(this.refs.track).children[currentSlide], callback);
             };
 
             this.setState({
                 animating: true,
                 currentSlide: targetSlide
             }, function () {
-                ReactTransitionEvents.addEndEventListener(this.refs.track.getDOMNode().children[currentSlide], callback);
+                ReactTransitionEvents.addEndEventListener(ReactDOM.findDOMNode(this.refs.track).children[currentSlide], callback);
             });
 
             this.autoPlay();
@@ -205,7 +205,7 @@ var helpers = {
                 if (this.props.afterChange) {
                     this.props.afterChange(currentSlide);
                 }
-                ReactTransitionEvents.removeEndEventListener(this.refs.track.getDOMNode(), callback);
+                ReactTransitionEvents.removeEndEventListener(ReactDOM.findDOMNode(this.refs.track), callback);
             };
 
             this.setState({
@@ -213,7 +213,7 @@ var helpers = {
                 currentSlide: targetSlide,
                 trackStyle: getTrackAnimateCSS(assign({left: targetLeft}, this.props, this.state))
             }, function () {
-                ReactTransitionEvents.addEndEventListener(this.refs.track.getDOMNode(), callback);
+                ReactTransitionEvents.addEndEventListener(ReactDOM.findDOMNode(this.refs.track), callback);
             });
 
         }
