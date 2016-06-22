@@ -1,3 +1,4 @@
+import React from 'react';
 import {InnerSlider} from './inner-slider';
 import assign from '../lib/object-assign';
 import json2mq from '../lib/json2mq';

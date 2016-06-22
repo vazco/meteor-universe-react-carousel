@@ -1,4 +1,5 @@
 import Slider from '../index';
+import React from 'react';
 
 var SingleItem = React.createClass({
     getInitialState: function () {

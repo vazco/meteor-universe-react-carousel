@@ -1,4 +1,5 @@
 import classnames from '../lib/classnames';
+import React from 'react';
 
 export var PrevArrow = React.createClass({
 

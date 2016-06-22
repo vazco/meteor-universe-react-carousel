@@ -1,3 +1,4 @@
+import React from 'react';
 import classnames from '../lib/classnames';
 
 var getDotCount = function (spec) {

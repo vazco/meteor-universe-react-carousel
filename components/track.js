@@ -1,3 +1,4 @@
+import React from 'react';
 import cloneWithProps from '../lib/react-clonewithprops';
 import assign from '../lib/object-assign';
 import classnames from '../lib/classnames';
