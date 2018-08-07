@@ -1,9 +1,14 @@
-## Abandonware
+<h1 align="center">
+    <a href="https://github.com/vazco">vazco</a>/Universe Carousel
+</h1>
 
-# Universe Carousel
-Carousel component built with React. 
-It is a react port of akiran/react-slick which is port of slick carousel.
+&nbsp;
 
+<h3 align="center">
+  -- Abandonware. This package is deprecated! --
+</h3>
+
+&nbsp;
 
 ### Installation
 ```bash
@@ -81,3 +86,8 @@ var SimpleSlider = React.createClass({
 | afterChange | function | callback function called after the current index changes | Yes |
 | beforeChange | function | callback function called before the current index changes | Yes |
 
+### License
+
+<img src="https://vazco.eu/banner.png" align="right">
+
+**Like every package maintained by [Vazco](https://vazco.eu/), Universe Carousel is [MIT licensed](https://github.com/vazco/uniforms/blob/master/LICENSE).**
